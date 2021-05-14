@@ -1,0 +1,52 @@
+﻿@model ShopBridge.ViewModels.ItemMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Item Details</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    <h4>ItemMaster</h4>
+    <hr />
+    @Html.HiddenFor(model => model.ItemId)
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItenName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ItenName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ItemType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dicount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dicount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.ItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

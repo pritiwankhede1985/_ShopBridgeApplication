@@ -1,0 +1,50 @@
+﻿@model ShopBridge.ViewModels.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>LogIn</h2>
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Shop Bridge Login Page</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table>
+            <tr>
+                <td>@Html.LabelFor(a => a.UserName)</td>
+                <td>@Html.TextBoxFor(a => a.UserName)</td>
+                <td>@Html.ValidationMessageFor(a => a.UserName,"", new { @class = "text-danger" })</td>
+              
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.Password,"", new { @class ="text-danger" })
+                </td>
+            </tr><br/>
+            <tr></tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+}  
